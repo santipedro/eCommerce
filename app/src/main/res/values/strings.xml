@@ -2,4 +2,5 @@
     <string name="app_name">eCommerce</string>
     <string name="entrar">Entrar</string>
    <string name="textcadastro">Crie uma conta nova!</string>
+    <string name="telacadastro">Bem vindo(a) à nossa loja!</string>
 </resources>

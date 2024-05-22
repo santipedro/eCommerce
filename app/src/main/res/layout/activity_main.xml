@@ -5,6 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText"/>
+    tools:context=".CadastroForm"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/text_cadastrese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/telacadastro"
+
+/>
+    <View
+        android:id="@+id/cadastroContainer"
+        style="@style/ContainerComponents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_cadastrese"
+        
+/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
