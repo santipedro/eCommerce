@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -30,8 +30,48 @@
         app:layout_constraintTop_toBottomOf="@id/text_cadastrese"
         
 />
+    
+    <EditText
+        android:id="@+id/edit_nome"
+        style="@style/Edit_Text"
+        app:layout_constraintTop_toTopOf="@id/cadastroContainer"
+        app:layout_constraintStart_toStartOf="@id/cadastroContainer"
+        app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        />
 
+    <EditText
+        android:id="@+id/email_cadastro"
+        style="@style/Edit_Text"
+        android:drawableRight="@drawable/ic_email"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome"
+        app:layout_constraintStart_toStartOf="@id/cadastroContainer"
+        app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        />
 
+    <EditText
+        android:id="@+id/senha_cadastro"
+        style="@style/Edit_Text"
+        android:drawableRight="@drawable/ic_passeye"
+        app:layout_constraintTop_toBottomOf="@id/email_cadastro"
+        app:layout_constraintStart_toStartOf="@id/cadastroContainer"
+        app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
+        android:hint="Senha"
+        android:inputType="numberPassword"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_cadastro"
+        style="@style/Edit_button"
+        android:text="Cadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastroContainer"
+        android:layout_marginTop="50dp"
+        />
 
 
 
