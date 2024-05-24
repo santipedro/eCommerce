@@ -38,6 +38,7 @@
         app:layout_constraintStart_toStartOf="@id/cadastroContainer"
         app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
         android:hint="Nome"
+        android:textColorHint="@color/black"
         android:inputType="textPersonName"
         />
 
@@ -49,6 +50,7 @@
         app:layout_constraintStart_toStartOf="@id/cadastroContainer"
         app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
         android:hint="Email"
+        android:textColorHint="@color/black"
         android:inputType="textEmailAddress"
         />
 
@@ -60,6 +62,7 @@
         app:layout_constraintStart_toStartOf="@id/cadastroContainer"
         app:layout_constraintEnd_toEndOf="@id/cadastroContainer"
         android:hint="Senha"
+        android:textColorHint="@color/black"
         android:inputType="numberPassword"
         />
 

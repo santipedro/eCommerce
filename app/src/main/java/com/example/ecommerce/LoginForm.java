@@ -32,7 +32,6 @@ public class LoginForm extends AppCompatActivity {
     }
 
     private void IniciarCadastro(){
-
         tela_cadastro = findViewById(R.id.textelacastrar);
     }
 
