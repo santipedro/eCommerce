@@ -114,7 +114,6 @@ public class CadastroForm extends AppCompatActivity {
         userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         //Criação de um Log para resgistrar e pesquisar se o User foi salvo no banco de dados.
-
         DocumentReference docReference = database.collection("Users").document(userID);
         docReference.set(users).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

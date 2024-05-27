@@ -13,9 +13,11 @@
         android:theme="@style/Theme.ECommerce"
         tools:targetApi="31">
         <activity
+            android:name=".TelaMain"
+            android:exported="false" />
+        <activity
             android:name=".CadastroForm"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".LoginForm"
             android:exported="true">
