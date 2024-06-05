@@ -2,41 +2,49 @@ package com.example.ecommerce.model;
 
 public class Produto {
 
-    int imgproduct;
-    String descprod;
-    String nomeprod;
-    String priceprod;
+    int imgplant;
+    String nomeplant;
+    String descplant;
 
-    public int getImgproduct() {
-        return imgproduct;
+    String priceplant;
+
+    public int getImgplant() {
+        return imgplant;
     }
 
-    public void setImgproduct(int imgproduct) {
-        this.imgproduct = imgproduct;
+    public Produto(int imgplant, String descplant, String nomeplant, String priceplant) {
+        this.imgplant = imgplant;
+        this.nomeplant = nomeplant;
+        this.descplant = descplant;
+        this.priceplant = priceplant;
     }
 
-    public String getDescprod() {
-        return descprod;
+    public void setImgplant(int imgplant) {
+        this.imgplant = imgplant;
     }
 
-    public void setDescprod(String descprod) {
-        this.descprod = descprod;
+    public String getDescplant() {
+        return descplant;
     }
 
-    public String getNomeprod() {
-        return nomeprod;
+    public void setDescplant(String descplant) {
+        this.descplant = descplant;
     }
 
-    public void setNomeprod(String nomeprod) {
-        this.nomeprod = nomeprod;
+    public String getNomeplant() {
+        return nomeplant;
     }
 
-    public String getPriceprod() {
-        return priceprod;
+    public void setNomeplant(String nomeplant) {
+        this.nomeplant = nomeplant;
     }
 
-    public void setPriceprod(String priceprod) {
-        this.priceprod = priceprod;
+    public String getPriceplant() {
+        return priceplant;
+    }
+
+    public void setPriceplant(String priceplant){
+        this.priceplant = priceplant;
     }
 }
 

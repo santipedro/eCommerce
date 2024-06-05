@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/transparent">
+
+<!--Nesse arquivo, é criado o design para a lista de produtos.-->
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/CardImg"
@@ -17,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+        android:id="@+id/imgplant"
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:src="@drawable/girassol"
@@ -40,9 +44,9 @@
 
     <TextView
         android:id="@+id/descImg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        android:text="Texto da descrição"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -51,8 +55,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="140dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="5dp"
         />
 
+    <TextView
+        android:id="@+id/txtPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 25,00"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/descImg"
+        app:layout_constraintStart_toEndOf="@id/CardImg"
+        android:layout_marginStart="20dp"
+        android:layout_marginVertical="5dp"
+        />
+
+    <Button
+        android:id="@+id/button_addproduto"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grin"
+        android:text="Add to Cart"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtPreco"
+        app:layout_constraintTop_toBottomOf="@id/descImg"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/button_addproduto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:background="@color/grin"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

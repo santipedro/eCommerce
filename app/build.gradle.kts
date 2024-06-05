@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -27,6 +28,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    viewBinding{
+        enable = true;
+    }
+
+
 }
 
 dependencies {
