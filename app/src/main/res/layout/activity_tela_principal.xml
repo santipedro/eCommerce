@@ -9,8 +9,6 @@
     tools:context=".TelaPrincipal"
     >
 
-    <!-- Tela principal do App, incompleta. -->
-    
     <View
         android:id="@+id/headmain"
         android:layout_width="match_parent"
@@ -21,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

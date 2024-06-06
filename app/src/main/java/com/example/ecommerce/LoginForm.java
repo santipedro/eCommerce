@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginForm extends AppCompatActivity {
 
@@ -55,13 +56,13 @@ public class LoginForm extends AppCompatActivity {
                         snackbar.setTextColor(Color.BLACK);
                         snackbar.show();
                     }else{
-                        AuthUsers();
+                        AuthUsers(v);
                     }
                 }
             });
 
     }
-    private void AuthUsers(){
+    private void AuthUsers(View view){
         String email = edit_email.getText().toString();
         String senha = edit_senha.getText().toString();
 
@@ -71,15 +72,44 @@ public class LoginForm extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                  progressbar.setVisibility(View.VISIBLE);
-                /* new Handler().postDelayed(new Runnable() {
+                new Handler().postDelayed(new Runnable() { //metódo com Intent para levar à tela principal.
                      @Override
                      public void run() {
-
+                         TelaPrincipal();
                      }
-                 })*/ //Criar metódo com Intent para levar à tela principal (Após criação da mesma.);
+                 },3000);
+                }else{ // Criando TryCatch para exception de erro no login.
+                    String error;
+                    try {
+                        throw task.getException();
+                    }catch (Exception e){
+                        error = "Usuário ou Senha Incorretos!";
+                    }
+                    Snackbar snackbar = Snackbar.make(view,error,Snackbar.LENGTH_SHORT );
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser userAtual = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (userAtual != null){  //Condicional para definir se já existe um usuário logado no APP.
+            TelaPrincipal();
+        }
+
+    }
+
+    private void TelaPrincipal (){
+        Intent intent = new Intent(LoginForm.this, TelaPrincipal.class);
+        startActivity(intent);
+        finish();
     }
     private void IniciarCadastro(){
         tela_cadastro = findViewById(R.id.textelacastrar);

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/transparent">
+    android:background="@color/transparent"
+    >
 
 <!--Nesse arquivo, é criado o design para a lista de produtos.-->
 
@@ -23,7 +24,6 @@
         android:id="@+id/imgplant"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        android:src="@drawable/girassol"
         android:scaleType="centerInside"
         android:layout_gravity="center"
             />
@@ -35,8 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Girassol"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/CardImg"
@@ -48,8 +48,8 @@
         android:layout_height="wrap_content"
         android:text="Texto da descrição"
         android:textSize="14sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textStyle="normal"
         app:layout_constraintTop_toBottomOf="@id/txtImg"
         app:layout_constraintStart_toEndOf="@id/CardImg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="R$ 25,00"
-        android:textSize="25sp"
-        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/grin"
         app:layout_constraintTop_toBottomOf="@id/descImg"
         app:layout_constraintStart_toEndOf="@id/CardImg"
         android:layout_marginStart="20dp"
@@ -73,12 +74,15 @@
 
     <Button
         android:id="@+id/button_addproduto"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/grin"
         android:text="Add to Cart"
+        android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="bold"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="-7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/txtPreco"
         app:layout_constraintTop_toBottomOf="@id/descImg"

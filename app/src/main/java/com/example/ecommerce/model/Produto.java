@@ -19,32 +19,19 @@ public class Produto {
         this.priceplant = priceplant;
     }
 
-    public void setImgplant(int imgplant) {
-        this.imgplant = imgplant;
-    }
-
     public String getDescplant() {
         return descplant;
     }
 
-    public void setDescplant(String descplant) {
-        this.descplant = descplant;
-    }
 
     public String getNomeplant() {
         return nomeplant;
     }
 
-    public void setNomeplant(String nomeplant) {
-        this.nomeplant = nomeplant;
-    }
 
     public String getPriceplant() {
         return priceplant;
     }
 
-    public void setPriceplant(String priceplant){
-        this.priceplant = priceplant;
-    }
 }
 

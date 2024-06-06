@@ -12,16 +12,19 @@ import com.example.ecommerce.databinding.ProductItemBinding;
 import com.example.ecommerce.model.Produto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.PlantViewHolder> {
 
     private final ArrayList <Produto> plantlist; //Uso do FINAL por ser uma variável constante.
+    private List<Produto> produtoList;
     private final Context context;
 
     public PlantAdapter(ArrayList<Produto> plantlist, Context context) {
         this.plantlist = plantlist;
         this.context = context;
     }
+
 
     @NonNull
     @Override
@@ -33,7 +36,7 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.PlantViewHol
 
     @Override
     public void onBindViewHolder(@NonNull PlantViewHolder holder, int position) {
-        holder.binding.imgplant.setBackgroundResource(plantlist.get(position).getImgplant());
+        holder.binding.imgplant.setBackgroundResource(plantlist.get(position).getImgplant()); // O adapter resgata cada produto e "seta" nos seus respectivos nomes/preços etc.
         holder.binding.txtImg.setText(plantlist.get(position).getNomeplant());
         holder.binding.descImg.setText(plantlist.get(position).getDescplant());
         holder.binding.txtPreco.setText(plantlist.get(position).getPriceplant());
@@ -42,6 +45,11 @@ public class PlantAdapter extends RecyclerView.Adapter<PlantAdapter.PlantViewHol
     @Override
     public int getItemCount() {
         return plantlist.size();
+    }
+
+    public void setfilteredList(List<Produto> filteredList){
+        produtoList = filteredList;
+        notifyDataSetChanged();
     }
 
     public static class PlantViewHolder extends RecyclerView.ViewHolder{
