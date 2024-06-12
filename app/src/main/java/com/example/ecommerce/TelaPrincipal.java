@@ -59,73 +59,72 @@ public class TelaPrincipal extends AppCompatActivity {
         });
         produtoList = new ArrayList<>();
         getPlant();
-
     }
 
     public void filterList(String newText) {
         List<Produto> filteredList = new ArrayList<>();
 
-        for (Produto produto : produtoList){
-            if (produto.getNomeplant().toLowerCase().contains(newText.toLowerCase())){
+        for (Produto produto : produtoList) {
+            if (produto.getNomeplant().toLowerCase().contains(newText.toLowerCase())) {
                 filteredList.add(produto);
             }
-       }
-        if (filteredList.isEmpty()){
-           Toast.makeText(this,"Sem dados encontrados.", Toast.LENGTH_SHORT).show();
-        }else{
-            plantAdapter.setfilteredList(filteredList);
         }
+            if (filteredList.isEmpty()) {
+                Toast.makeText(this, "Sem dados encontrados.", Toast.LENGTH_SHORT).show();
+            } else {
+                plantAdapter.setfilteredList(filteredList);
+            }
     }
 
+    private void getPlant() {
 
-        private void getPlant(){
+        Produto planta1 = new Produto(
+                R.drawable.suculenta,
+                "Texto da descrição",
+                "Suculenta",
+                "R$ 30,00"
+        );
+        plantList.add(planta1);
 
-            Produto planta1 = new Produto(
-                    R.drawable.suculenta,
-                    "Texto da descrição",
-                    "Suculenta",
-                    "R$ 30,00"
-            );
-            plantList.add(planta1);
+        Produto planta2 = new Produto(
+                R.drawable.tulipa,
+                "Texto da descrição",
+                "Tulipa",
+                "R$ 50,00"
+        );
+        plantList.add(planta2);
 
-            Produto planta2 = new Produto(
-                    R.drawable.tulipa,
-                    "Texto da descrição",
-                    "Tulipa",
-                    "R$ 50,00"
-            );
-            plantList.add(planta2);
+        Produto planta3 = new Produto(
+                R.drawable.lirio,
+                "Texto da descrição",
+                "Lírio",
+                "R$ 40,00"
+        );
+        plantList.add(planta3);
 
-            Produto planta3 = new Produto(
-                    R.drawable.lirio,
-                    "Texto da descrição",
-                    "Lírio",
-                    "R$ 40,00"
-            );
-            plantList.add(planta3);
+        Produto planta4 = new Produto(
+                R.drawable.samambaia,
+                "Texto da descrição",
+                "Samambaia",
+                "R$ 100,00"
+        );
+        plantList.add(planta4);
 
-            Produto planta4 = new Produto(
-                    R.drawable.samambaia,
-                    "Texto da descrição",
-                    "Samambaia",
-                    "R$ 100,00"
-            );
-            plantList.add(planta4);
+        Produto planta5 = new Produto(
+                R.drawable.espadastjorge,
+                "Texto da descrição",
+                "Espada-de-São-Jorge",
+                "R$ 100,00"
+        );
+        plantList.add(planta5);
 
-            Produto planta5 = new Produto(
-                    R.drawable.espadastjorge,
-                    "Texto da descrição",
-                    "Espada-de-São-Jorge",
-                    "R$ 100,00"
-            );
-            plantList.add(planta5);
-
-            Produto planta6 = new Produto(
-                    R.drawable.orquidea,
-                    "Texto da descrição",
-                    "Orquídea",
-                    "R$ 35,00"
-            );
-            plantList.add(planta6);
-        }
+        Produto planta6 = new Produto(
+                R.drawable.orquidea,
+                "Texto da descrição",
+                "Orquídea",
+                "R$ 35,00"
+        );
+        plantList.add(planta6);
+    }
 }
+
