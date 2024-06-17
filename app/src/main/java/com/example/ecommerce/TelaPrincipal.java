@@ -29,55 +29,58 @@ public class TelaPrincipal extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) { // Método chamado na criação da atividade
+        super.onCreate(savedInstanceState); // Chama o método onCreate da superclasse
 
-        binding = ActivityTelaPrincipalBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        binding = ActivityTelaPrincipalBinding.inflate(getLayoutInflater()); // Infla o layout usando View Binding
+        setContentView(binding.getRoot()); // Define o layout da atividade
 
-        RecyclerView recyclerViewPlant = binding.recyclerviewPlant;
-        recyclerViewPlant.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewPlant.setHasFixedSize(true);
+        RecyclerView recyclerViewPlant = binding.recyclerviewPlant; // Obtém o RecyclerView do layout
+        recyclerViewPlant.setLayoutManager(new LinearLayoutManager(this)); // Define o layout manager como LinearLayoutManager
+        recyclerViewPlant.setHasFixedSize(true); // Define que o RecyclerView tem tamanho fixo
 
-        plantAdapter = new PlantAdapter(plantList, this);
-        recyclerViewPlant.setAdapter(plantAdapter); //Exibir lista criada na RecyclerView
-        SearchView searchView = (SearchView) findViewById(R.id.search);
+        plantAdapter = new PlantAdapter(plantList, this); // Inicializa o adapter com a lista de plantas
+        recyclerViewPlant.setAdapter(plantAdapter); // Define o adapter para o RecyclerView
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        SearchView searchView = (SearchView) findViewById(R.id.search); // Obtém o SearchView do layout
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() { // Define o listener para o SearchView
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
+            public boolean onQueryTextSubmit(String query) { // Método chamado quando a consulta é submetida
+                return false; // Retorna false para indicar que a consulta não foi tratada
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(String newText) { // Método chamado quando o texto da consulta muda
+                filterList(newText); // Chama o método para filtrar a lista
 
-                filterList(newText);
-
-                return true;
+                return true; // Retorna true para indicar que a consulta foi tratada
             }
         });
-        produtoList = new ArrayList<>();
-        getPlant();
+
+        produtoList = new ArrayList<>(); // Inicializa a lista de produtos
+        getPlant(); // Chama o método para obter os produtos
     }
 
-    public void filterList(String newText) {
-        List<Produto> filteredList = new ArrayList<>();
+    public void filterList(String newText) { // Método para filtrar a lista de produtos
+        List<Produto> filteredList = new ArrayList<>(); // Cria uma lista para os produtos filtrados
 
-        for (Produto produto : produtoList) {
-            if (produto.getNomeplant().toLowerCase().contains(newText.toLowerCase())) {
-                filteredList.add(produto);
+        for (Produto produto : produtoList) { // Itera sobre a lista de produtos
+            if (produto.getNomeplant().toLowerCase().contains(newText.toLowerCase())) { // Verifica se o nome da planta contém o texto da consulta
+                filteredList.add(produto); // Adiciona o produto à lista filtrada
             }
         }
-            if (filteredList.isEmpty()) {
-                Toast.makeText(this, "Sem dados encontrados.", Toast.LENGTH_SHORT).show();
-            } else {
-                plantAdapter.setfilteredList(filteredList);
-            }
+
+        if (filteredList.isEmpty()) { // Verifica se a lista filtrada está vazia
+            Toast.makeText(this, "Sem dados encontrados.", Toast.LENGTH_SHORT).show(); // Mostra uma mensagem se a lista estiver vazia
+        } else {
+            plantAdapter.setfilteredList(filteredList); // Atualiza o adapter com a lista filtrada
+        }
     }
 
-    private void getPlant() {
+    private void getPlant() { // Método para obter os produtos
 
+        // Cria e adiciona os produtos à lista
         Produto planta1 = new Produto(
                 R.drawable.suculenta,
                 "Texto da descrição",
@@ -127,4 +130,3 @@ public class TelaPrincipal extends AppCompatActivity {
         plantList.add(planta6);
     }
 }
-
